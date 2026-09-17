@@ -1,0 +1,1092 @@
+/* =========================================================
+   MARFEX SOLUTION
+   SERVICES PAGE
+========================================================= */
+
+:root {
+
+    --service-green: #16a34a;
+    --service-blue: #2563eb;
+    --service-dark: #0f172a;
+    --service-text: #334155;
+    --service-muted: #64748b;
+    --service-border: #e2e8f0;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.services-hero {
+
+    min-height: 330px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    margin-top: 80px;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 50%,
+            rgba(22, 163, 74, .10),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 40%,
+            rgba(37, 99, 235, .10),
+            transparent 30%
+        ),
+
+        #fff;
+}
+
+
+.services-hero-content {
+
+    text-align: center;
+
+    max-width: 650px;
+
+    margin: auto;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.services-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 7px 14px;
+
+    border-radius: 50px;
+
+    background: #f0fdf4;
+
+    color: var(--service-green);
+
+    border: 1px solid #bbf7d0;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 15px;
+}
+
+
+.services-hero h1 {
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: clamp(40px, 6vw, 58px);
+
+    font-weight: 800;
+
+    color: var(--service-dark);
+
+    line-height: 1.1;
+
+    margin-bottom: 12px;
+}
+
+
+.services-hero h1 span {
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--service-green),
+            var(--service-blue)
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+.services-hero p {
+
+    color: var(--service-muted);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    margin: auto;
+
+    max-width: 520px;
+}
+
+
+/* =========================================================
+   DECORATION
+========================================================= */
+
+.hero-decoration {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(22, 163, 74, .10);
+}
+
+
+.hero-decoration-one {
+
+    width: 300px;
+
+    height: 300px;
+
+    left: -150px;
+
+    top: 30px;
+}
+
+
+.hero-decoration-two {
+
+    width: 260px;
+
+    height: 260px;
+
+    right: -130px;
+
+    bottom: -80px;
+
+    border-color:
+        rgba(37, 99, 235, .10);
+}
+
+
+/* =========================================================
+   SERVICES SECTION
+========================================================= */
+
+.services-section {
+
+    padding: 55px 20px 60px;
+
+    background: #fff;
+}
+
+
+.services-heading {
+
+    text-align: center;
+
+    max-width: 600px;
+
+    margin:
+        0 auto 25px;
+}
+
+
+.services-heading > span {
+
+    color: var(--service-green);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+.services-heading h2 {
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 34px;
+
+    font-weight: 800;
+
+    color: var(--service-dark);
+
+    margin: 5px 0;
+}
+
+
+.services-heading h2 b {
+    color: var(--service-green);
+}
+
+
+.services-heading p {
+
+    color: var(--service-muted);
+
+    font-size: 12px;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   FILTER
+========================================================= */
+
+.service-filter {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 7px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 30px;
+}
+
+
+.service-filter-btn {
+
+    border: 1px solid var(--service-border);
+
+    background: #fff;
+
+    color: var(--service-text);
+
+    padding: 7px 14px;
+
+    border-radius: 50px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .3s ease;
+}
+
+
+.service-filter-btn:hover,
+.service-filter-btn.active {
+
+    color: #fff;
+
+    border-color: transparent;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--service-green),
+            var(--service-blue)
+        );
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   ICON GRID
+========================================================= */
+
+.services-icons-grid {
+
+    max-width: 900px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 13px;
+}
+
+
+/* =========================================================
+   SERVICE ICON CARD
+========================================================= */
+
+.service-icon-card {
+
+    position: relative;
+
+    min-height: 130px;
+
+    padding: 17px 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    background: #fff;
+
+    border: 1px solid var(--service-border);
+
+    border-radius: 17px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(15, 23, 42, .05);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+
+    transform-style: preserve-3d;
+}
+
+
+.service-icon-card:hover {
+
+    transform:
+        translateY(-7px)
+        rotateX(3deg)
+        rotateY(-3deg);
+
+    border-color:
+        rgba(22, 163, 74, .35);
+
+    box-shadow:
+        0 18px 40px
+        rgba(15, 23, 42, .11);
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.service-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #f0fdf4,
+            #eff6ff
+        );
+
+    color: var(--service-green);
+
+    font-size: 19px;
+
+    margin-bottom: 10px;
+
+    box-shadow:
+        0 8px 20px
+        rgba(22, 163, 74, .08);
+
+    transition: .35s ease;
+}
+
+
+.service-icon-card:hover .service-icon {
+
+    color: #fff;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--service-green),
+            var(--service-blue)
+        );
+
+    transform:
+        translateZ(20px)
+        scale(1.08)
+        rotate(-4deg);
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.service-icon-card h3 {
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 11px;
+
+    line-height: 1.35;
+
+    font-weight: 700;
+
+    color: var(--service-dark);
+
+    margin: 0;
+
+    max-width: 130px;
+}
+
+
+.service-icon-card > span {
+
+    position: absolute;
+
+    right: 8px;
+
+    bottom: 8px;
+
+    font-size: 8px;
+
+    color: #cbd5e1;
+
+    transition: .3s ease;
+}
+
+
+.service-icon-card:hover > span {
+
+    color: var(--service-green);
+
+    transform:
+        translateX(3px);
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.service-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(15, 23, 42, .65);
+
+    backdrop-filter: blur(9px);
+}
+
+
+.service-modal.active {
+
+    display: flex;
+
+    animation:
+        modalFade .25s ease;
+}
+
+
+@keyframes modalFade {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   MODAL BOX
+========================================================= */
+
+.service-modal-box {
+
+    width: 100%;
+
+    max-width: 500px;
+
+    position: relative;
+
+    padding: 32px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    background: #fff;
+
+    box-shadow:
+        0 30px 90px
+        rgba(0, 0, 0, .25);
+
+    animation:
+        modalOpen .35s ease;
+}
+
+
+@keyframes modalOpen {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(.85)
+            translateY(20px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   CLOSE
+========================================================= */
+
+.service-modal-close {
+
+    position: absolute;
+
+    right: 14px;
+
+    top: 14px;
+
+    width: 35px;
+
+    height: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #f1f5f9;
+
+    color: var(--service-dark);
+
+    cursor: pointer;
+
+    transition: .3s ease;
+}
+
+
+.service-modal-close:hover {
+
+    background: var(--service-green);
+
+    color: #fff;
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   MODAL ICON
+========================================================= */
+
+.modal-service-icon {
+
+    width: 75px;
+
+    height: 75px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin: 0 auto 14px;
+
+    border-radius: 20px;
+
+    color: #fff;
+
+    font-size: 27px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--service-green),
+            var(--service-blue)
+        );
+
+    box-shadow:
+        0 15px 30px
+        rgba(37, 99, 235, .20);
+}
+
+
+/* =========================================================
+   CATEGORY
+========================================================= */
+
+.modal-category {
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    color: var(--service-green);
+}
+
+
+/* =========================================================
+   MODAL TITLE
+========================================================= */
+
+.service-modal-box h2 {
+
+    font-family: 'Poppins', sans-serif;
+
+    color: var(--service-dark);
+
+    font-size: 25px;
+
+    font-weight: 800;
+
+    margin: 5px 0 10px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.service-modal-box > p {
+
+    color: var(--service-muted);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    margin-bottom: 17px;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.modal-features {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 7px;
+
+    margin-bottom: 20px;
+}
+
+
+.modal-feature {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 9px;
+
+    text-align: left;
+
+    background: #f8fafc;
+
+    border: 1px solid var(--service-border);
+
+    border-radius: 9px;
+
+    font-size: 9px;
+
+    color: var(--service-text);
+
+    font-weight: 600;
+}
+
+
+.modal-feature i {
+
+    color: var(--service-green);
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   WHATSAPP BUTTON
+========================================================= */
+
+.modal-whatsapp {
+
+    border: none;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 11px 20px;
+
+    border-radius: 10px;
+
+    background: #25d366;
+
+    color: #fff;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .3s ease;
+}
+
+
+.modal-whatsapp:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(37, 211, 102, .25);
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.services-cta {
+
+    padding:
+        0 20px 50px;
+}
+
+
+.services-cta-box {
+
+    max-width: 900px;
+
+    margin: auto;
+
+    padding:
+        24px 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-radius: 19px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #f0fdf4,
+            #eff6ff
+        );
+
+    border:
+        1px solid #dbeafe;
+}
+
+
+.services-cta-box span {
+
+    color: var(--service-green);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.services-cta-box h3 {
+
+    margin: 4px 0 0;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 19px;
+
+    font-weight: 800;
+
+    color: var(--service-dark);
+}
+
+
+.services-cta-box h3 b {
+    color: var(--service-green);
+}
+
+
+.services-cta-btn {
+
+    padding:
+        10px 17px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    border-radius: 9px;
+
+    color: #fff;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--service-green),
+            var(--service-blue)
+        );
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    transition: .3s ease;
+}
+
+
+.services-cta-btn:hover {
+
+    color: #fff;
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* =========================================================
+   HIDDEN FILTER ITEMS
+========================================================= */
+
+.service-icon-card.hidden-service {
+
+    display: none;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .services-icons-grid {
+
+        grid-template-columns:
+            repeat(4, 1fr);
+    }
+
+}
+
+
+@media (max-width: 767px) {
+
+    .services-hero {
+
+        min-height: 300px;
+
+        margin-top: 70px;
+    }
+
+
+    .services-hero h1 {
+        font-size: 38px;
+    }
+
+
+    .services-section {
+
+        padding:
+            45px 15px;
+    }
+
+
+    .services-heading h2 {
+        font-size: 29px;
+    }
+
+
+    .services-icons-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 10px;
+    }
+
+
+    .service-icon-card {
+
+        min-height: 115px;
+
+        padding: 12px 6px;
+
+        border-radius: 14px;
+    }
+
+
+    .service-icon {
+
+        width: 42px;
+
+        height: 42px;
+
+        font-size: 16px;
+
+        margin-bottom: 8px;
+    }
+
+
+    .service-icon-card h3 {
+
+        font-size: 9px;
+    }
+
+
+    .service-icon-card > span {
+
+        display: none;
+    }
+
+
+    .service-modal-box {
+
+        padding:
+            28px 18px;
+    }
+
+
+    .service-modal-box h2 {
+
+        font-size: 21px;
+    }
+
+
+    .modal-features {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .services-cta-box {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 22px 20px;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .services-icons-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 8px;
+    }
+
+
+    .service-icon-card {
+
+        min-height: 105px;
+    }
+
+
+    .service-icon {
+
+        width: 38px;
+
+        height: 38px;
+
+        font-size: 14px;
+    }
+
+
+    .service-icon-card h3 {
+
+        font-size: 8px;
+    }
+
+}
