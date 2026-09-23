@@ -1,0 +1,32 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+secrets.json
+
+# Dependencies and virtual environments
+node_modules/
+venv/
+.venv/
+env/
+.envdir/
+
+# Build, cache, and editor files
+dist/
+build/
+.cache/
+.parcel-cache/
+.next/
+coverage/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.vscode/
+.idea/
+*.log
+Thumbs.db
+.DS_Store

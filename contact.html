@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | MARKFEX SOLUTION Digital Agency</title>
+    <link rel="icon" type="image/png" href="assets\images\logo text.png">
+
+  <meta name="description" content="Get in touch with MARFEX SOLUTION. Contact us via phone, email, WhatsApp, or visit our office for a free digital agency consultation.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/header.css">
+</head>
+<body>
+
+  <!-- Page Loader -->
+  <div id="page-loader">
+    <div class="loader-orbit orbit-one"></div>
+    <div class="loader-orbit orbit-two"></div>
+    <div class="loader-center">
+      <div class="loader-logo">MARKFEX <span>SOLUTION</span></div>
+      <div class="loader-line"></div>
+      <p>Building Digital Experiences</p>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <div data-site-header data-active="contact"></div>
+
+  <!-- Subpage Banner -->
+  <section class="section-padding bg-light-gray text-center" style="margin-top: 80px;">
+    <div class="container">
+      <div class="badge-pill mb-3"><i class="fas fa-envelope me-1"></i> Contact Us</div>
+      <h1 class="section-heading display-4 fw-bold"><span class="text-gradient">MARKFEX SOLUTION</span></h1>
+      <p class="section-subheading max-w-600 mx-auto">Have a project in mind or need technical support? We're here to assist you 24/7.</p>
+    </div>
+  </section>
+
+  <!-- Contact Form & Info -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-5" data-aos="fade-right">
+          <div class="contact-info-card">
+            <h3>Get In Touch</h3>
+            <p>Our team responds to all project inquiries within 2 business hours.</p>
+
+            <div class="info-item-list">
+              <div class="info-item">
+                <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+                <div class="info-details">
+                  <label>Direct Phone</label>
+                  <a href="tel:+918925848445">+91 8925848445</a>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                <div class="info-details">
+                  <label>Official Email</label>
+                  <a href="mailto:markfexsolution@gmail.com">markfexsolution@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon"><i class="fab fa-whatsapp"></i></div>
+                <div class="info-details">
+                  <label>WhatsApp Chat</label>
+                  <a href="javascript:void(0)" onclick="sendWhatsAppMessage()">+91 8925848445</a>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon"><i class="fas fa-clock"></i></div>
+                <div class="info-details">
+                  <label>Business Hours</label>
+                  <span>Mon - Sat: 9:00 AM - 7:00 PM</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7" data-aos="fade-left">
+          <div class="contact-form-card">
+            <h3 class="mb-4">Start Your Digital Transformation</h3>
+            <form id="agencyContactForm">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <input type="text" class="form-control-custom" placeholder="Your Name *" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="email" class="form-control-custom" placeholder="Email Address *" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="tel" class="form-control-custom" placeholder="WhatsApp / Phone *" required>
+                </div>
+                <div class="col-md-6">
+                  <select class="form-control-custom" required>
+                    <option value="" disabled selected>Select Service Required</option>
+                    <option value="Website Design & Development">Website Design & Development</option>
+                    <option value="E-Commerce Website">E-Commerce Website</option>
+                    <option value="SEO & Google Business Profile">SEO & Google Business Profile</option>
+                    <option value="Graphic & Logo Design">Graphic & Logo Design</option>
+                    <option value="Video & Reels Editing">Video & Reels Editing</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <textarea class="form-control-custom" rows="5" placeholder="Provide details about your business goals..." required></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn-custom btn-primary-gradient w-100">
+                    Submit Project Inquiry <i class="fas fa-paper-plane ms-2"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map Embed -->
+      <div class="map-container mt-5" data-aos="fade-up">
+        <iframe
+          src="https://www.google.com/maps?q=Perundurai,+Erode&output=embed"
+          width="100%"
+          height="380"
+          style="border:0; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);"
+          allowfullscreen=""
+          loading="lazy"
+          title="MARFEX SOLUTION location in Perundurai, Erode"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-section">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="footer-brand-title mb-3">MARKFEX <span>SOLUTION</span></div>
+          <p class="footer-text">Your Business. Our Digital Solutions. Creating high quality digital platforms for high growth brands.</p>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links-list">
+            <li><a href="services.html">Website Design</a></li>
+            <li><a href="services.html">SEO Optimization</a></li>
+            <li><a href="services.html">E-Commerce Web</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <h4 class="footer-heading">Contact Us</h4>
+          <p class="small text-white mb-2"><i class="fas fa-map-marker-alt me-2 text-primary"></i> Perundurai, Erode</p>
+          <p class="small text-white mb-2"><i class="fas fa-phone me-2 text-primary"></i> +91 8925848445</p>
+          <p class="small text-white mb-3"><i class="fas fa-envelope me-2 text-primary"></i> markfexsolution@gmail.com</p>
+          <button onclick="sendWhatsAppMessage()" class="btn-custom btn-whatsapp w-100 py-2">
+            <i class="fab fa-whatsapp me-2"></i> WhatsApp Us
+          </button>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 MARKFEX SOLUTION. All Rights Reserved.</div>
+        <div>
+          <a href="privacy.html" class="me-3">Privacy Policy</a>
+          <a href="terms.html">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="floating-widgets">
+    <div class="float-btn scroll-top-btn" id="scrollTopBtn"><i class="fas fa-chevron-up"></i></div>
+    <a href="tel:+918925848445" class="float-btn float-btn-call"><i class="fas fa-phone-alt"></i></a>
+    <div onclick="sendWhatsAppMessage()" class="float-btn float-btn-whatsapp"><i class="fab fa-whatsapp"></i></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/site-header.js"></script>
+
+
+<script src="js/main.js"></script>
+</body>
+</html>
