@@ -601,6 +601,29 @@ document.addEventListener(
             }
         );
 
+        /* Hash Navigation Support */
+        const hash = window.location.hash.replace("#", "");
+        if (hash) {
+            const targetEl = document.getElementById(hash);
+            if (targetEl) {
+                const targetCat = targetEl.dataset.category;
+                if (targetCat) {
+                    const matchingBtn = document.querySelector(`.service-filter-btn[data-filter="${targetCat}"]`);
+                    if (matchingBtn) {
+                        matchingBtn.click();
+                    }
+                }
+                setTimeout(() => {
+                    targetEl.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 300);
+            } else {
+                const matchingBtn = document.querySelector(`.service-filter-btn[data-filter="${hash}"]`);
+                if (matchingBtn) {
+                    matchingBtn.click();
+                }
+            }
+        }
+
     }
 );
 

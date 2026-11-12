@@ -72,8 +72,8 @@ const initializeMain = () => {
         if (entry.isIntersecting) {
           const target = entry.target;
           const countTo = parseInt(target.getAttribute('data-target') || '0', 10);
-          const duration = 2000;
-          const stepTime = 20;
+          const duration = 1500;
+          const stepTime = 10;
           const totalSteps = duration / stepTime;
           let currentStep = 0;
 
@@ -190,6 +190,159 @@ const initializeMain = () => {
         }, 4000);
       }, 1500);
     });
+  }
+
+  // 9. Hero Services Interactive Carousel
+  const heroCarousel = document.querySelector('.hero-services-carousel');
+  if (heroCarousel) {
+    const slides = Array.from(heroCarousel.querySelectorAll('[data-service-slide]'));
+    const dots = Array.from(heroCarousel.querySelectorAll('[data-service-dot]'));
+    const progressBar = heroCarousel.querySelector('.hero-services-progress span');
+    const totalSlides = slides.length;
+    let currentIndex = slides.findIndex((s) => s.classList.contains('is-active'));
+    if (currentIndex < 0) currentIndex = 0;
+
+    let isPaused = false;
+    const duration = 4500;
+    let startTime = performance.now();
+    let animFrameId = null;
+
+    const goToSlide = (newIndex) => {
+      if (newIndex === currentIndex && slides[currentIndex]?.classList.contains('is-active')) return;
+
+      slides[currentIndex]?.classList.remove('is-active');
+      slides[currentIndex]?.setAttribute('aria-hidden', 'true');
+      slides[currentIndex]?.setAttribute('tabindex', '-1');
+
+      dots[currentIndex]?.classList.remove('is-active');
+      dots[currentIndex]?.removeAttribute('aria-current');
+
+      currentIndex = (newIndex + totalSlides) % totalSlides;
+
+      slides[currentIndex]?.classList.add('is-active');
+      slides[currentIndex]?.setAttribute('aria-hidden', 'false');
+      slides[currentIndex]?.setAttribute('tabindex', '0');
+
+      dots[currentIndex]?.classList.add('is-active');
+      dots[currentIndex]?.setAttribute('aria-current', 'true');
+
+      startTime = performance.now();
+      if (progressBar) progressBar.style.width = '0%';
+    };
+
+    const nextSlide = () => {
+      goToSlide(currentIndex + 1);
+    };
+
+    const prevSlide = () => {
+      goToSlide(currentIndex - 1);
+    };
+
+    const tick = (now) => {
+      if (!isPaused) {
+        const elapsed = now - startTime;
+        const progress = Math.min((elapsed / duration) * 100, 100);
+        if (progressBar) {
+          progressBar.style.width = `${progress}%`;
+        }
+        if (elapsed >= duration) {
+          nextSlide();
+        }
+      } else {
+        startTime = now - (progressBar ? (parseFloat(progressBar.style.width) / 100) * duration : 0);
+      }
+      animFrameId = requestAnimationFrame(tick);
+    };
+
+    animFrameId = requestAnimationFrame(tick);
+
+    heroCarousel.addEventListener('mouseenter', () => { isPaused = true; });
+    heroCarousel.addEventListener('mouseleave', () => { isPaused = false; });
+    heroCarousel.addEventListener('focusin', () => { isPaused = true; });
+    heroCarousel.addEventListener('focusout', () => { isPaused = false; });
+
+    dots.forEach((dot, idx) => {
+      dot.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        goToSlide(idx);
+      });
+    });
+
+    heroCarousel.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        prevSlide();
+      }
+    });
+
+    let touchStartX = 0;
+    heroCarousel.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+      isPaused = true;
+    }, { passive: true });
+
+    heroCarousel.addEventListener('touchend', (e) => {
+      const touchEndX = e.changedTouches[0].screenX;
+      isPaused = false;
+      const diff = touchEndX - touchStartX;
+      if (Math.abs(diff) > 40) {
+        if (diff < 0) nextSlide();
+        else prevSlide();
+      }
+    }, { passive: true });
+  }
+
+  // 10. "Our Clients" Showcase - Dynamic Array Config & Counter Trigger
+  // Easily add, modify, or remove clients in this array or in HTML:
+  window.MARFEX_CLIENTS = [
+    { name: "Oorupro", logo: "assets/images/clients/client1.png", icon: "fa-building" },
+    { name: "Medron", logo: "assets/images/clients/client2.png", icon: "fa-hospital" },
+    { name: "Apex Studio", logo: "assets/images/clients/client3.png", icon: "fa-cube" },
+    { name: "Zenith Tech", logo: "assets/images/clients/client4.png", icon: "fa-microchip" },
+    { name: "Nova Retail", logo: "assets/images/clients/client5.png", icon: "fa-shopping-bag" },
+    { name: "Bloom", logo: "assets/images/clients/client6.png", icon: "fa-leaf" },
+    { name: "Prime Logistics", logo: "assets/images/clients/client7.png", icon: "fa-truck-fast" },
+    { name: "Erode Textiles", logo: "assets/images/clients/client8.png", icon: "fa-tshirt" }
+  ];
+
+  const clientStrip = document.querySelector('.clients-counter-strip');
+  if (clientStrip && typeof IntersectionObserver !== 'undefined') {
+    const stripObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const numbers = entry.target.querySelectorAll('.counter-number');
+          numbers.forEach((target) => {
+            if (target.dataset.animated) return;
+            target.dataset.animated = 'true';
+
+            const countTo = parseInt(target.getAttribute('data-target') || '0', 10);
+            const duration = 1600;
+            const stepTime = 16;
+            const totalSteps = duration / stepTime;
+            let currentStep = 0;
+
+            const counterInterval = setInterval(() => {
+              currentStep++;
+              const progress = currentStep / totalSteps;
+              const currentCount = Math.ceil(countTo * progress);
+              target.textContent = currentCount.toLocaleString();
+
+              if (currentStep >= totalSteps) {
+                target.textContent = countTo.toLocaleString() + (target.getAttribute('data-suffix') || '');
+                clearInterval(counterInterval);
+              }
+            }, stepTime);
+          });
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    stripObserver.observe(clientStrip);
   }
 };
 

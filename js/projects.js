@@ -37,7 +37,37 @@ const projects = {
 
         link:
             "#"
-    }
+    },
+    klaClothings: {
+    title: "KLA Clothings Boutique",
+
+    logo:
+        "assets/images/projects/kla Clothings.png",
+
+    description:
+        "KLA Clothings Boutique partnered with us for creative reel production and digital marketing. We create engaging promotional reels to showcase their clothing collections, increase brand visibility, attract potential customers, and generate business leads through social media.",
+
+    type:
+        "Social Media Marketing & Lead Generation",
+
+    link:
+        "#"
+},
+jkSereno: {
+    title: "JK Sereno",
+
+    logo:
+        "assets/images/projects/Jk sereno.png",
+
+    description:
+        "JK Sereno is a real estate project for which we provide professional video shoots, engaging reels editing, and creative content creation to showcase the property, highlight its features, and create attractive promotional content for social media.",
+
+    type:
+        "Video Production & Content Creation",
+
+    link:
+        "#"
+}
 
 };
 

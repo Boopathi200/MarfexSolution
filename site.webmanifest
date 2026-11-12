@@ -1,0 +1,22 @@
+{
+  "name": "MARKFEX SOLUTION",
+  "short_name": "MARKFEX",
+  "description": "Website Design, SEO & Digital Marketing in Erode and Perundurai",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0D47A1",
+  "icons": [
+    {
+      "src": "assets/images/logo text.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+
